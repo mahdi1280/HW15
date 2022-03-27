@@ -16,12 +16,27 @@ import java.time.LocalDateTime;
 public class Main {
     public static void main(String[] args) {
         MySession.getSession();
-        UserService userService=new UserServiceIml();
-        ShortTermService shortTermService=new ShortTermServiceImpl();
-        CurrentService currentService=new CurrentServiceImpl();
-        User userAli = userService.save(new User("ali", "hasani"));
-        User userMohammad = userService.save(new User("mohammad", "mohammadi"));
-        currentService.save(new Current(LocalDateTime.now(),100000000,userMohammad,false));
-        shortTermService.save(new ShortTerm(LocalDateTime.now(),100000000,userAli,0));
+        UserService userService = new UserServiceIml();
+        ShortTermService shortTermService = new ShortTermServiceImpl();
+        CurrentService currentService = new CurrentServiceImpl();
+        User userAli = userService.save(User.builder()
+                .setFirstname("ali")
+                .setLastname("hassani")
+                .build());
+        User userMohammad = userService.save(User.builder()
+                .setFirstname("mohammad")
+                .setLastname("mohammadi")
+                .build());
+
+        currentService.save( Current.builder()
+                .setAmount(1231231231)
+                .setUser(userMohammad)
+                .setCzech(false)
+                .build());
+        shortTermService.save(  ShortTerm.builder()
+                .setAmount(123123)
+                .setUser(userAli)
+                .setInterest(1)
+                .build());
     }
 }

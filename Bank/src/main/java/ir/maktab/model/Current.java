@@ -24,4 +24,39 @@ public class Current extends Account {
         this.czech = czech;
     }
 
+    public static Builder builder(){
+        return new Builder();
+    }
+
+    public static class Builder{
+
+        private boolean czech;
+        LocalDateTime createdAt;
+        private double amount;
+        private User user;
+
+        public Builder setCzech(boolean czech) {
+            this.czech = czech;
+            return this;
+        }
+
+        public Builder setCreatedAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public Builder setAmount(double amount) {
+            this.amount = amount;
+            return this;
+        }
+
+        public Builder setUser(User user) {
+            this.user = user;
+            return this;
+        }
+
+        public Current build(){
+            return new Current(createdAt,amount,user,czech);
+        }
+    }
 }

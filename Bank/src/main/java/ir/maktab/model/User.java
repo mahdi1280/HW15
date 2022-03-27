@@ -24,4 +24,28 @@ public class User extends BaseEntity {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
+    public static Builder builder(){
+        return new Builder();
+    }
+
+    public static class Builder{
+
+        private String firstname;
+        private String lastname;
+
+        public Builder setFirstname(String firstname) {
+            this.firstname = firstname;
+            return this;
+        }
+
+        public Builder setLastname(String lastname) {
+            this.lastname = lastname;
+            return this;
+        }
+
+        public User build(){
+            return new User(firstname,lastname);
+        }
+    }
 }
