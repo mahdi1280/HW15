@@ -9,15 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = Schema.TABLE_USER
-        ,schema = Schema.SCHEMA_NAME)
+@Table(schema=Schema.SCHEMA_NAME)
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User extends BaseEntity {
+public class Current extends Account {
 
-    private String firstname;
-    private String lastname;
-
+    private boolean czech;
 }
