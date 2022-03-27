@@ -10,13 +10,13 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(schema=Schema.SCHEMA_NAME)
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Table(name = "user_account",schema=Schema.SCHEMA_NAME)
+@Inheritance(strategy=InheritanceType.JOINED)
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Account extends BaseEntity{
+public class Account extends BaseEntity {
 
     @CreationTimestamp
     private LocalDateTime createdAt;

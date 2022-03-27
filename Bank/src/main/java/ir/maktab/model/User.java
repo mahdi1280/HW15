@@ -13,11 +13,15 @@ import javax.persistence.Table;
         ,schema = Schema.SCHEMA_NAME)
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class User extends BaseEntity {
 
     private String firstname;
     private String lastname;
 
+
+    public User(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 }
