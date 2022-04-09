@@ -6,14 +6,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Person extends BaseEntity {
+public class Disc extends BaseEntity{
 
     private String name;
+    @ManyToOne
+    private Bank bank;
 
 }
