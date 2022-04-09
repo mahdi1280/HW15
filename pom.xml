@@ -11,6 +11,7 @@
     <modules>
         <module>Bank</module>
         <module>Clup</module>
+        <module>Thread</module>
     </modules>
 
     <properties>
